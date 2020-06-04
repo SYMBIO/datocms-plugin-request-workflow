@@ -17,7 +17,7 @@ window.DatoCmsPlugin.init((plugin) => {
     approveButton.addEventListener('click', () => {
       plugin.saveCurrentItem()
         .then(() => {
-          window.location.href = `https://wineofczechrepublic.symbio.agency/api/approveRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
+          window.top.location.href = `https://wineofczechrepublic.symbio.agency/api/approveRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
         })
         .catch(() => plugin.alert('Nepodařilo se schválit položku'));
     });
@@ -29,7 +29,7 @@ window.DatoCmsPlugin.init((plugin) => {
     denyButton.addEventListener('click', () => {
       plugin.saveCurrentItem()
         .then(() => {
-          window.location.href = `https://wineofczechrepublic.symbio.agency/api/denyRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
+          window.top.location.href = `https://wineofczechrepublic.symbio.agency/api/denyRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
         })
         .catch(() => plugin.alert('Nepodařilo se zamítnout položku'));
     });
