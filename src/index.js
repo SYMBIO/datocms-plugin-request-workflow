@@ -12,6 +12,7 @@ window.DatoCmsPlugin.init((plugin) => {
   if (stage === 'Nový') {
     const approveButton = document.createElement('button');
     approveButton.classList.add('approveButton');
+    approveButton.classList.add('DatoCMS-button--small');
     approveButton.textContent = 'Schválit';
     approveButton.addEventListener('click', () => {
       plugin.saveCurrentItem()
@@ -23,6 +24,7 @@ window.DatoCmsPlugin.init((plugin) => {
 
     const denyButton = document.createElement('button');
     denyButton.classList.add('denyButton');
+    denyButton.classList.add('DatoCMS-button--small');
     denyButton.textContent = 'Zamítnout';
     denyButton.addEventListener('click', () => {
       plugin.saveCurrentItem()
