@@ -12,7 +12,7 @@ window.DatoCmsPlugin.init((plugin) => {
   const approveButton = document.createElement('button');
   approveButton.classList.add('approveButton');
   approveButton.textContent = 'Schválit';
-  approveButton.addEventListener('click', async () => {
+  approveButton.addEventListener('click', () => {
     plugin.saveCurrentItem()
       .then(() => {
         window.location.href = `https://wineofczechrepublic.symbio.agency/api/approveRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
