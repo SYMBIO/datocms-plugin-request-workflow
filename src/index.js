@@ -17,12 +17,19 @@ window.DatoCmsPlugin.init((plugin) => {
       .then(() => {
         window.location.href = `https://wineofczechrepublic.symbio.agency/api/approveRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
       })
-      .catch(() => console.log('Could not save this record'));
+      .catch(() => plugin.alert('Nepodařilo se schválit položku'));
   });
 
   const denyButton = document.createElement('button');
   denyButton.classList.add('denyButton');
   denyButton.textContent = 'Zamítnout';
+  denyButton.addEventListener('click', () => {
+    plugin.saveCurrentItem()
+      .then(() => {
+        window.location.href = `https://wineofczechrepublic.symbio.agency/api/denyRequest?id=${plugin.itemId}&type=${plugin.itemType.id}`;
+      })
+      .catch(() => plugin.alert('Nepodařilo se zamítnout položku'));
+  });
 
   container.appendChild(approveButton);
   container.appendChild(denyButton);
